@@ -37,6 +37,7 @@ const spin=()=>{
         console.log(nowplay);
         document.querySelector(".spin").innerHTML=`<h1>${random}</h2>`
         if(random+nowplay.position<=100){
+            random=100
             nowplay.setposition(random)
             move(nowplay) 
         }
@@ -56,6 +57,7 @@ const move=(nowplay)=>{
     if(nowplay.prevposition!==0){
         document.querySelector(`.num${nowplay.prevposition}`).childNodes[3].remove()  
     }
+    wincheck()
     let chk=checksl()
     console.log("===="+chk);
     if(chk!==false){
@@ -133,4 +135,8 @@ const checksl=()=>{
         return false
     }
 }
-
+const wincheck=()=>{
+    if(nowplay.position===100){
+        document.querySelector(".winner").innerHTML=`${nowplay.color} won`
+    }
+}
