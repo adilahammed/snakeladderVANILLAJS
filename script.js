@@ -27,28 +27,32 @@ let nowplay=playerslist[n]
 
 
 const spin=()=>{
-    console.log(nowplay);
-    let random=Math.floor(Math.random()*6 )+1 
-    console.log(random);
-    console.log(nowplay);
-    console.log(random+nowplay.position);
-    if(random+nowplay.position<=100){
-        nowplay.setposition(random)
-        move(nowplay) 
-    }
-
-
     
-    updatenowplay()
+        console.log(nowplay);
+        let random=Math.floor(Math.random()*6 )+1 
+        console.log(random);
+        console.log(nowplay);
+        console.log(random+nowplay.position);
+        if(random+nowplay.position<=100){
+            nowplay.setposition(random)
+            move(nowplay) 
+        }
+    
+    
+        
+        updatenowplay()
+    
 }
 
 
 
 
 const move=(nowplay)=>{
+    
     document.querySelector(`.num${nowplay.position}`).innerHTML=document.querySelector(`.num${nowplay.position}`).innerHTML+`<p2 class="${nowplay.color}" style="background-color: ${nowplay.color};">  ${nowplay.letter}</p2>`
     if(nowplay.prevposition!==0){
-        console.log( document.querySelector(`.num${nowplay.prevposition}`).childNodes[3]);
+        let u=console.log( document.querySelector(`.num${nowplay.prevposition}`).childNodes[3]);
+        // console.log(u);
         document.querySelector(`.num${nowplay.prevposition}`).childNodes[3].remove()
        
     }
