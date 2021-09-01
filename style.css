@@ -16,7 +16,7 @@ body{
 .control{
     display: inline-block;
 
-    background-color: green;
+    background-color: rgb(129, 218, 224);
     width: 750px;
     height: 750px;
 }
@@ -55,6 +55,10 @@ p2{
 
 .spin{
     background-color: red;
+    color: white;
     width: 100px;
     height: 100px;
+}
+.winner{
+    color: white;
 }

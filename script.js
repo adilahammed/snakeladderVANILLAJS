@@ -37,7 +37,7 @@ const spin=()=>{
         console.log(nowplay);
         document.querySelector(".spin").innerHTML=`<h1>${random}</h2>`
         if(random+nowplay.position<=100){
-            random=100
+            // random=100
             nowplay.setposition(random)
             move(nowplay) 
         }
@@ -61,6 +61,8 @@ const move=(nowplay)=>{
     let chk=checksl()
     console.log("===="+chk);
     if(chk!==false){
+        let snakeladder=snakladcheck()
+        document.querySelector(".emoj").innerHTML=snakeladder
         nowplay.slposition(chk)
         const button = document.querySelector('.spin')
         button.disabled=true
@@ -138,5 +140,13 @@ const checksl=()=>{
 const wincheck=()=>{
     if(nowplay.position===100){
         document.querySelector(".winner").innerHTML=`${nowplay.color} won`
+    }
+}
+const snakladcheck=()=>{
+    let h=nowplay.position
+    if(h===8 || h===1 || h===4 || h===21 || h===28 || h===50 || h===80 || h===71 ){
+        return("ladder")
+    }else{
+        return("🐍")
     }
 }
