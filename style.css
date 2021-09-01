@@ -23,7 +23,7 @@ body{
 .box{
     /* border: solid 1px; */
     margin-left: 2px;
-    /* background-color: hotpink; */
+    background-color: hotpink;
     /* border-radius: 50px; */
     width: 44px;
     height: 44px;
