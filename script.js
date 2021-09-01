@@ -35,6 +35,7 @@ const spin=()=>{
         let random=Math.floor(Math.random()*6 )+1 
         console.log(random);
         console.log(nowplay);
+        document.querySelector(".spin").innerHTML=`<h1>${random}</h2>`
         if(random+nowplay.position<=100){
             nowplay.setposition(random)
             move(nowplay) 
@@ -132,3 +133,4 @@ const checksl=()=>{
         return false
     }
 }
+
