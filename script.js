@@ -7,9 +7,13 @@ class players{
         this.prevposition=0
         this.letter= this.setletter()
     }
-    setposition=(n)=>{
+    setposition=(c)=>{
         this.prevposition=this.position
-        this.position=this.position+n
+        this.position=this.position+c
+    }
+    slposition=(b)=>{
+        this.prevposition=this.position
+        this.position=b
     }
     setletter=()=>{
         let [a]=this.color
@@ -49,11 +53,20 @@ const move=(nowplay)=>{
     
     document.querySelector(`.num${nowplay.position}`).innerHTML=document.querySelector(`.num${nowplay.position}`).innerHTML+`<p2 class="${nowplay.color}" style="background-color: ${nowplay.color};">  ${nowplay.letter}</p2>`
     if(nowplay.prevposition!==0){
-        
-        document.querySelector(`.num${nowplay.prevposition}`).childNodes[3].remove()
-       
+        document.querySelector(`.num${nowplay.prevposition}`).childNodes[3].remove()  
     }
+    let chk=checksl()
+    console.log("===="+chk);
+    if(chk!==false){
+        nowplay.slposition(chk)
+        setTimeout(()=>{
+            move(nowplay)
+            console.log(nowplay);
+        },2000)
+    }
+    console.log(chk);
 }
+
 
 
 const updatenowplay=()=>{
@@ -71,4 +84,48 @@ const changebutton=(a)=>{
     let g=playerslist[a]
     document.querySelector(".spin").style.backgroundColor=g.color
   
+}
+
+
+const checksl=()=>{
+    if(nowplay.position===1){
+        return 38
+    }
+    else if(nowplay.position===8){
+        return 30
+    }
+    else if(nowplay.position===4){
+        return 14
+    }else if(nowplay.position===21){
+        return 42
+    }else if(nowplay.position===28){
+        return 76
+    }else if(nowplay.position===50){
+        return 67
+    }else if(nowplay.position===71){
+        return 92
+    }else if(nowplay.position===80){
+        return 99
+    }
+    else if(nowplay.position===97){
+        return 78
+    }
+    else if(nowplay.position===88){
+        return 24
+    }
+    else if(nowplay.position===62){
+        return 18
+    }
+    else if(nowplay.position===48){
+        return 26
+    }
+    else if(nowplay.position===36){
+        return 6
+    }
+    else if(nowplay.position===32){
+        return 10
+    }
+    else{
+        return false
+    }
 }
