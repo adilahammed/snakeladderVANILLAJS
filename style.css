@@ -1,0 +1,44 @@
+body{
+    background-color: grey;
+    display: flex;
+}
+.board{
+    display: flex;
+    display: inline-block;
+    background-color: red;
+    background-image: url(./i984_pimgpsh_fullsize_distr.png);
+    background-repeat: no-repeat;
+    margin-left: -20px;
+    margin-top: -25px;
+    width: 475px;
+    height: 475px;
+}
+.control{
+    display: inline-block;
+
+    background-color: green;
+    width: 750px;
+    height: 750px;
+}
+.box{
+    border: solid 1px;
+    background-color: hotpink;
+    border-radius: 50px;
+    width: 44px;
+    height: 44px;
+}
+.ro{
+    margin-left:17px ;
+    margin-top: 19px;
+    display: flex;
+}
+.row{
+    display: flex;
+    
+}
+
+.ro1{
+    margin-left:17px ;
+    /* margin-top: 19px; */
+    display: flex;
+}
