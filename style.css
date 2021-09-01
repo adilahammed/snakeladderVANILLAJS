@@ -24,7 +24,7 @@ body{
     /* border: solid 1px; */
     margin-left: 2px;
     /* background-color: hotpink; */
-    border-radius: 50px;
+    /* border-radius: 50px; */
     width: 44px;
     height: 44px;
 }
@@ -46,4 +46,9 @@ body{
 }
 p{
     display: none;
+}
+p2{
+    height: 44px;
+    width: 10px;
+    display: inline-block;
 }
