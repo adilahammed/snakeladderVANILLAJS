@@ -59,7 +59,10 @@ const move=(nowplay)=>{
     console.log("===="+chk);
     if(chk!==false){
         nowplay.slposition(chk)
+        const button = document.querySelector('.spin')
+        button.disabled=true
         setTimeout(()=>{
+            button.disabled=false
             move(nowplay)
             console.log(nowplay);
         },2000)
