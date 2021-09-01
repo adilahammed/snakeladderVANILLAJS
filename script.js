@@ -30,9 +30,13 @@ const spin=()=>{
     console.log(nowplay);
     let random=Math.floor(Math.random()*6 )+1 
     console.log(random);
-    nowplay.setposition(random)
     console.log(nowplay);
-    move(nowplay)        
+    console.log(random+nowplay.position);
+    if(random+nowplay.position<=100){
+        nowplay.setposition(random)
+        move(nowplay) 
+    }
+
 
     
     updatenowplay()
@@ -46,10 +50,10 @@ const move=(nowplay)=>{
     if(nowplay.prevposition!==0){
         console.log( document.querySelector(`.num${nowplay.prevposition}`).childNodes[3]);
         document.querySelector(`.num${nowplay.prevposition}`).childNodes[3].remove()
-        // document.querySelector(`.num${nowplay.prevposition}`).innerHTML=`<p2style="background-color: black;>k </p2>`
+       
     }
     
-    // document.querySelector(`.num${position}`).style.backgroundColor=color
+    
 
 }
 
