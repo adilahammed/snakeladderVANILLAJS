@@ -27,12 +27,10 @@ let nowplay=playerslist[n]
 
 
 const spin=()=>{
-    
-        console.log(nowplay);
+        changebutton(n+1)
         let random=Math.floor(Math.random()*6 )+1 
         console.log(random);
         console.log(nowplay);
-        console.log(random+nowplay.position);
         if(random+nowplay.position<=100){
             nowplay.setposition(random)
             move(nowplay) 
@@ -51,14 +49,10 @@ const move=(nowplay)=>{
     
     document.querySelector(`.num${nowplay.position}`).innerHTML=document.querySelector(`.num${nowplay.position}`).innerHTML+`<p2 class="${nowplay.color}" style="background-color: ${nowplay.color};">  ${nowplay.letter}</p2>`
     if(nowplay.prevposition!==0){
-        let u=console.log( document.querySelector(`.num${nowplay.prevposition}`).childNodes[3]);
-        // console.log(u);
+        
         document.querySelector(`.num${nowplay.prevposition}`).childNodes[3].remove()
        
     }
-    
-    
-
 }
 
 
@@ -68,4 +62,13 @@ const updatenowplay=()=>{
         n=0
     }
     nowplay=playerslist[n]
+}
+
+const changebutton=(a)=>{
+    if(a===4){
+        a=0
+    }
+    let g=playerslist[a]
+    document.querySelector(".spin").style.backgroundColor=g.color
+  
 }

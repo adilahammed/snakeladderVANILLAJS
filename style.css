@@ -52,3 +52,9 @@ p2{
     width: 10px;
     display: inline-block;
 }
+
+.spin{
+    background-color: red;
+    width: 100px;
+    height: 100px;
+}
