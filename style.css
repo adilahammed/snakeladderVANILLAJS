@@ -1,6 +1,9 @@
 body{
     background-color: grey;
-    display: flex;
+    /* display: flex; */
+}
+.js{
+    display: block;
 }
 .board{
     display: flex;
